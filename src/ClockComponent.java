@@ -14,13 +14,20 @@ public class ClockComponent extends JComponent{
 	
 	// Will instantiating this speed up component painting?
 	private LocalTime local_time = LocalTime.now();
+	public int hour;
+	public int minute;
+	
+	// TODO Extract time out of clockcomponent
 
 	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		
 		local_time = LocalTime.now();
+		hour = local_time.getHour();
+		minute = local_time.getMinute();
 				
-		new Clock(g2, local_time.getHour(), local_time.getMinute());
+		new Clock(g2, hour, minute);
+
 	}
 }
