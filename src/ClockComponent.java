@@ -12,16 +12,16 @@ import java.time.LocalTime;
 @SuppressWarnings("serial")
 public class ClockComponent extends JComponent{
 	
-private LocalTime local_time = LocalTime.now();
-private int hour = local_time.getHour();
-private int min = local_time.getMinute();
-
+	private LocalTime local_time;
 
 	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		
+		local_time = LocalTime.now();
 		
-		Clock c1 = new Clock(g2, hour, min);
+		System.out.println("time: " + local_time);
+		
+		Clock c1 = new Clock(g2, local_time.getHour(), local_time.getMinute());
 	}
 }
