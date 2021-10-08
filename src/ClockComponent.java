@@ -12,16 +12,15 @@ import java.time.LocalTime;
 @SuppressWarnings("serial")
 public class ClockComponent extends JComponent{
 	
-	private LocalTime local_time;
+	// Will instantiating this speed up component painting?
+	private LocalTime local_time = LocalTime.now();
 
 	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		
 		local_time = LocalTime.now();
-		
-		System.out.println("time: " + local_time);
-		
-		Clock c1 = new Clock(g2, local_time.getHour(), local_time.getMinute());
+				
+		new Clock(g2, local_time.getHour(), local_time.getMinute());
 	}
 }
