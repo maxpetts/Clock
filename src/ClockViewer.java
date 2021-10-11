@@ -46,6 +46,7 @@ public class ClockViewer {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
+				clock.getCurrentTime();
 				clock.repaint();
 			}
 		}, 0, 60000);
