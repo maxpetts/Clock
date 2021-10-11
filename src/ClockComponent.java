@@ -19,6 +19,12 @@ public class ClockComponent extends JComponent{
 	private int minute;
 	
 	// TODO Extract time out of clockcomponent
+	
+	public ClockComponent(int hour, int minute) {
+		this.hour = hour;
+		this.minute = minute;
+	}
+	
 	public ClockComponent() {
 		getCurrentTime();
 	}
