@@ -27,7 +27,7 @@ public class ClockComponent extends JComponent{
 	}
 	
 	public ClockComponent() {
-		getCurrentTime();
+		updateTime();
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class ClockComponent extends JComponent{
 		return local_time.format(formatter);
 	}
 	
-	public void getCurrentTime() {
+	public void updateTime() {
 		local_time = LocalTime.now();
 		hour = local_time.getHour();
 		minute = local_time.getMinute();

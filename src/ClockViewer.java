@@ -47,7 +47,7 @@ public class ClockViewer {
 			@Override
 			public void run() {
 				digital_time.setText(clock.displayTime());
-				clock.getCurrentTime();
+				clock.updateTime();
 				clock.repaint();
 			}
 		}, 0, 60000);
