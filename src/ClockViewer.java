@@ -6,37 +6,37 @@
  */
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.BorderLayout;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
+import javax.swing.SwingConstants;
 
 public class ClockViewer {
 	public static void main(String[] args) {
 
-		JFrame frame = new JFrame();
+		JFrame frame = new JFrame("Clock");
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		
-		final int FRAME_DIMENSION = 400;
-		int screenWidth = screenSize.width;
-		int screenHeight = screenSize.height;
+		final Dimension FRAME_DIMENSION = new Dimension(400, 400);
 		
-		frame.setTitle("Clock");
-		frame.setResizable(true);
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// Center the window on the screen
-		frame.setLocation((screenWidth - FRAME_DIMENSION)/2, (screenHeight - FRAME_DIMENSION)/2);
-
-		// Set content pane size instead of frame size
-		frame.getContentPane().setPreferredSize(new Dimension(400, 400));
-		frame.pack();
+		frame.setLocation((screenSize.width - FRAME_DIMENSION.width)/2, (screenSize.height - FRAME_DIMENSION.height)/2);
 		
 		ClockComponent clock = new ClockComponent();
-		JLabel digital_time = new JLabel(clock.hour + " : " + clock.minute);
-		clock.add(digital_time);
-		frame.add(clock);
+		clock.setPreferredSize(FRAME_DIMENSION);
+		JLabel digital_time = new JLabel(clock.displayTime(), SwingConstants.CENTER);		
+		digital_time.setFont(new Font("Serif", Font.PLAIN, 70));
+				
+		frame.add(clock, BorderLayout.CENTER);
+		frame.add(digital_time, BorderLayout.PAGE_END);
+
+		frame.pack();
 		
 		frame.setVisible(true);
 		
