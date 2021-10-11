@@ -3,7 +3,8 @@ A Java implementation of a Clock, with AWT and Swing.
 
 # TODO
 
- - [ ] Add JLabel digital time to JFrame.
+ - [x] Option to have time abstracted out of component
+ - [x] Add JLabel digital time to JFrame.
  - [ ] Remove hard-coding of clock location in frame.
  - [ ] Clock theme options?
 
