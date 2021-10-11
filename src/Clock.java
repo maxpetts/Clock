@@ -5,8 +5,9 @@
  * @since 15/10/18
  */
 
-import java.awt.*;
-import java.awt.geom.*;
+import java.awt.Graphics2D;
+import java.awt.BasicStroke;
+import java.awt.geom.Ellipse2D;
 
 public class Clock {
 	

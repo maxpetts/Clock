@@ -5,10 +5,11 @@
  * @since 15/10/18
  */
 
-import java.awt.*;
-import javax.swing.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JComponent;
 
 @SuppressWarnings("serial")
 public class ClockComponent extends JComponent{
