@@ -8,6 +8,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @SuppressWarnings("serial")
 public class ClockComponent extends JComponent{
@@ -28,6 +29,11 @@ public class ClockComponent extends JComponent{
 		minute = local_time.getMinute();
 				
 		new Clock(g2, hour, minute);
+	
+	public String displayTime() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
+		return local_time.format(formatter);
+	}
 	}
 }
